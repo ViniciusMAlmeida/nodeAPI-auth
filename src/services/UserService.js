@@ -13,7 +13,7 @@ module.exports = {
   },
 
   generateToken(user) {
-    return jwt.sign({ id: user.id }, 'chaveSecreta', {
+    return jwt.sign({ id: user.id }, process.env.JWT_KEY, {
       expiresIn: 3600,
     });
   },
